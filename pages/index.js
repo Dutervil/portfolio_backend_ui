@@ -166,7 +166,7 @@ useEffect(() => {
                     </ul>
                 </div>
 
-                <div className="blog">
+                <div className="blogscategory flex flex-center">
 
 
                 </div>

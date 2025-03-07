@@ -125,8 +125,7 @@ export default function Blog(
     return <>
         <form className="addWebsiteform" onSubmit={createBlog}>
 
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginRight: '10px'}}>
-                {/*blog title*/}
+                 {/*blog title*/}
                 <div className="w-100 flex flex-col flex-left mb-2">
                     <label htmlFor="title">Title</label>
                     <input value={title}  onChange={event => {
@@ -140,8 +139,7 @@ export default function Blog(
                     <input value={slug}  onChange={handleSlugChange} type="text" id="slug" placeholder="Slug url"/>
                 </div>
 
-            </div>
-            {/*Category*/}
+             {/*Category*/}
             <div className="w-100 flex flex-col flex-left mb-2">
                 <label htmlFor="blogCategory">
                     Select Category (You can choose multiple by pressing Ctrl+click)
