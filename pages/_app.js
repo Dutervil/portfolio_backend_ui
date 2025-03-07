@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function App({ Component, pageProps }) {
 
-const [asideOpen, setAsideOpen] = useState(true);
+const [asideOpen, setAsideOpen] = useState(false);
 
 const AsideClickOpen = () => {
     setAsideOpen(!asideOpen)
