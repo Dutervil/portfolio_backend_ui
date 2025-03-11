@@ -6,6 +6,8 @@ import Link from "next/link";
 import {FaEdit} from "react-icons/fa";
 
 import {RiDeleteBin6Fill} from "react-icons/ri";
+import {AiFillEye, AiOutlinePlus} from "react-icons/ai";
+import {MdDrafts} from "react-icons/md";
 
 
 export default function Blogs() {
@@ -60,9 +62,24 @@ export default function Blogs() {
             {loading ? <><Dataloading/> </>:
                 <>
                     <div className="blogstable">
-                        <div className="flex gap-2 mb-1">
-                            <h2>Search Blogs:</h2>
-                            <input value={searchQuery} onChange={event => setSearchQuery(event.target.value)} type="text" placeholder="Search Blogs by title ..." />
+                        <div className=" mb-1" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
+                           <div>
+                               <h2>Search Blogs:</h2>
+                               <input value={searchQuery} onChange={event => setSearchQuery(event.target.value)} type="text" placeholder="Search Blogs by title ..." />
+                           </div>
+                           <div style={{ float:"right"}} >
+                              <Link href={"/blogs/addblog"}>
+                                  <button className="acceptButton">
+                                      <AiOutlinePlus/>
+                                  </button>
+                              </Link>
+                                  <span>  </span>
+                               <Link href={"/blogs/draft"}>
+                                   <button className="acceptButton" style={{backgroundColor:"skyblue"}}>
+                                       <MdDrafts/>
+                                   </button>
+                               </Link>
+                           </div>
                         </div>
                         <table className="table table-styling">
                             <thead>

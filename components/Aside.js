@@ -35,67 +35,36 @@ export default function Aside({asideOpen,handleAsideOpen}) {
                         <span>Dashoabrd</span>
                     </li>
                 </Link>
-                <li className={activeLink === '/blogs' ? 'navactive flex-col flex-left':' flex-col flex-left'} onClick={()=> handleLinkClick('/blogs')}>
-                    <div className="flex gap-1">
-                        <BsPostcard/>
-                        <span>Blogs</span>
-                    </div>
-                        {activeLink === "/blogs" && (
-                            <ul>
-                                    <Link href={"/blogs"}>
-                                            <li>All Blogs</li>
-                                    </Link>
-                                    <Link href={"/blogs/addblog"}>
-                                            <li>Add Blogs</li>
-                                    </Link>
-                                    <Link href={"/blogs/draft"}>
-                                            <li>Draft Blogs</li>
-                                    </Link>
-                            </ul>
-                        )}
+                <li className={activeLink === '/blogs' ? 'navactives flex-col flex-left':' flex-col flex-left'} onClick={()=> handleLinkClick('/blogs')}>
+
+                    <Link href={"/blogs"}>
+                        <div className="flex gap-1">
+                            <BsPostcard/>
+                            <span>Blogs</span>
+                        </div>
+                    </Link>
+                </li>
+
+                <li className={activeLink === '/shops' ? 'navactives flex-col flex-left':' flex-col flex-left'} onClick={()=> handleLinkClick('/shops')}>
+
+
+                    <Link href={"/shops"}>
+                        <div className="flex gap-1">
+                            <RiShoppingCart2Line/>
+                            <span>Shops</span>
+                        </div>
+                    </Link>
 
                 </li>
 
-                <li className={activeLink === '/shops' ? 'navactive flex-col flex-left':' flex-col flex-left'} onClick={()=> handleLinkClick('/shops')}>
-                    <div className="flex gap-1">
-                        <RiShoppingCart2Line/>
-                        <span>Shops</span>
-                    </div>
-                    {activeLink === "/shops" && (
-                        <ul>
-                            <Link href={"/shops"}>
-                                <li>All Shops</li>
-                            </Link>
-                            <Link href={"/shops/addproduct"}>
-                                <li>Add Shops</li>
-                            </Link>
-                            <Link href={"/shops/draftshop"}>
-                                <li>Draft Shops</li>
-                            </Link>
-                        </ul>
-                    )}
+                <li className={activeLink === '/projects' ? 'navactives flex-col flex-left':' flex-col flex-left'} onClick={()=> handleLinkClick('/projects')}>
 
-                </li>
-
-                <li className={activeLink === '/blogs' ? 'navactive flex-col flex-left':' flex-col flex-left'} onClick={()=> handleLinkClick('/projects')}>
-                    <div className="flex gap-1">
-                        <MdOutlineWorkOutline/>
-                        <span>Projects</span>
-                    </div>
-                    {activeLink === "/projects" && (
-                        <ul>
-                            <Link href={"/projects"}>
-                                <li>All Projects</li>
-                            </Link>
-                            <Link href={"/projects/addproject"}>
-                                <li>Add Projects</li>
-                            </Link>
-                            <Link href={"/projects/draftprojects"}>
-                                <li>Draft Projects</li>
-                            </Link>
-                        </ul>
-                    )}
-
+                    <Link href={"/projects"}>
+                        <div className="flex gap-1">
+                            <MdOutlineWorkOutline/>
+                            <span>Projects</span>
+                        </div>
+                    </Link>
                 </li>
 
                 <Link href={"/contacts"}>

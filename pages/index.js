@@ -167,7 +167,34 @@ useEffect(() => {
                 </div>
 
                 <div className="blogscategory flex flex-center">
+                   <table>
+                       <thead>
+                       <tr>
+                           <td>Topis</td>
+                           <td>Data</td>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       <tr>
+                          <td>Next JS</td>
+                           <td>{blogData.filter(dat => dat?.blogCategory).length}</td>
+                       </tr>
+                       <tr>
+                           <td>Next JS</td>
+                           <td>{blogData.filter(dat => dat?.blogCategory).length}</td>
+                       </tr>
 
+                       <tr>
+                           <td>Next JS</td>
+                           <td>{blogData.filter(dat => dat?.blogCategory).length}</td>
+                       </tr>
+
+                       <tr>
+                           <td>Next JS</td>
+                           <td>{blogData.filter(dat => dat?.blogCategory).length}</td>
+                       </tr>
+                       </tbody>
+                   </table>
 
                 </div>
             </div>
