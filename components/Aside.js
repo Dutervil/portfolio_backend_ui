@@ -30,7 +30,7 @@ export default function Aside({asideOpen,handleAsideOpen}) {
         <aside className={asideOpen ? 'asideleft active' :'asideleft'}>
             <ul>
                 <Link href={"/"}>
-                    <li className="navactive">
+                    <li className={activeLink === '/' ? 'navactives':' '} onClick={()=> handleLinkClick('/')}>
                         <IoHome/>
                         <span>Dashoabrd</span>
                     </li>
@@ -68,14 +68,14 @@ export default function Aside({asideOpen,handleAsideOpen}) {
                 </li>
 
                 <Link href={"/contacts"}>
-                    <li className={activeLink === '/contacts' ? 'navactive' :''} onClick={()=> handleLinkClick('/contacts')}>
+                    <li className={activeLink === '/contacts' ? 'navactives' :''} onClick={()=> handleLinkClick('/contacts')}>
                         <RiContactsBook2Line/>
                         <span>Contacts</span>
                     </li>
                 </Link>
 
                 <Link href={"/setting"}>
-                    <li className={activeLink === '/setting' ? 'navactive' :''} onClick={()=> handleLinkClick('/setting')}>
+                    <li className={activeLink === '/setting' ? 'navactives' :''} onClick={()=> handleLinkClick('/setting')}>
                       <IoSettingsOutline/>
                         <span>Settings</span>
                     </li>
