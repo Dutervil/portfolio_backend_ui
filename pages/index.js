@@ -4,6 +4,7 @@ import {Bar} from "react-chartjs-2";
 
 import {Chart as  ChartJS, CategoryScale,LinearScale,BarElement, Title, Tooltip, Legend} from "chart.js";
 import {useEffect, useState} from "react";
+import LoginLayout from "@/components/LoginLayout";
 
 
 
@@ -94,6 +95,7 @@ useEffect(() => {
         labels,datasets
     }
     return (
+<LoginLayout>
 
     <>
       <Head>
@@ -203,6 +205,7 @@ useEffect(() => {
      </div>
     </>
 
+</LoginLayout>
   );
 
 

@@ -5,6 +5,9 @@ import {BsPostcard} from "react-icons/bs";
 import {IoHome, IoSettingsOutline} from "react-icons/io5"
 import {MdOutlineWorkOutline} from "react-icons/md";
 import {RiContactsBook2Line, RiShoppingCart2Line} from "react-icons/ri";
+import LoginLayout from "@/components/LoginLayout";
+import {useSession} from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 export default function Aside({asideOpen,handleAsideOpen}) {
 
@@ -26,7 +29,12 @@ export default function Aside({asideOpen,handleAsideOpen}) {
         setActiveLink(router.pathname);
     }, [router.pathname])
 
+    const {data:session} = useSession();
+
+    if (session) {
+
     return <>
+
         <aside className={asideOpen ? 'asideleft active' :'asideleft'}>
             <ul>
                 <Link href={"/"}>
@@ -81,10 +89,10 @@ export default function Aside({asideOpen,handleAsideOpen}) {
                     </li>
                 </Link>
             </ul>
-            <button className="logoutbtn">Logout</button>
+            <button onClick={()=>signOut()} className="logoutbtn">Logout</button>
         </aside>
 
     </>
-
+    }
 
 }
