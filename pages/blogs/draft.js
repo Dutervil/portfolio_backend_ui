@@ -7,10 +7,19 @@ import Link from "next/link";
 import {FaEdit} from "react-icons/fa";
 
 import {RiDeleteBin6Fill} from "react-icons/ri";
+import {useSession} from "next-auth/react";
+import {useRouter} from "next/router";
 
 
 export default function Draft() {
+    const {data :session,status} =useSession()
 
+
+    const router = useRouter();
+    if(!session){
+        router.push('/auth/signin');
+        return  null;
+    }
     //Pagination
     const [currentPage, setCurrentPage] = useState(1);
     const[perPage] = useState(7);

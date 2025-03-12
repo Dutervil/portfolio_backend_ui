@@ -8,10 +8,12 @@ import {FaEdit} from "react-icons/fa";
 import {RiDeleteBin6Fill} from "react-icons/ri";
 import {AiFillEye, AiOutlinePlus} from "react-icons/ai";
 import {MdDrafts} from "react-icons/md";
+import {useSession} from "next-auth/react";
+import {useRouter} from "next/router";
 
 
 export default function Blogs() {
-
+    const {data :session,status} =useSession()
      //Pagination
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -45,6 +47,16 @@ export default function Blogs() {
 
     for(let i = 1; i <= Math.ceil(allData /perPage); i++){
         pageNumbers.push(i);
+    }
+
+
+
+
+
+    const router = useRouter();
+    if(!session){
+        router.push('/auth/signin');
+        return  null;
     }
     return <>
 

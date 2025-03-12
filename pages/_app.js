@@ -47,14 +47,13 @@ useEffect(() => {
                 </div>
             ) : (
 
-
-
                 <SessionProvider session={session}>
 
                     <ParentComponent appOpen={asideOpen} appAsideClickOpen={AsideClickOpen} />
 
                     <main>
                         <div className={asideOpen ? 'container' : 'container active'}>
+
                             <Component {...pageProps} />
                             <ToastContainer />
                         </div>
