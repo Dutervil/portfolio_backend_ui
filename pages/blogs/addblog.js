@@ -10,11 +10,7 @@ export default function Addblog() {
     const {data :session,status} =useSession()
 
 
-    const router = useRouter();
-    if(!session){
-        router.push('/auth/signin');
-        return  null;
-    }
+
     return <>
       <div className="addblogspage">
           <div className="titledashboard flex flex-sb">

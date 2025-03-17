@@ -53,11 +53,11 @@ export default function Blogs() {
 
 
 
-    const router = useRouter();
-    if(!session){
-        router.push('/auth/signin');
-        return  null;
-    }
+    // const router = useRouter();
+    // if(!session){
+    //     router.push('/auth/signin');
+    //     return  null;
+    // }
     return <>
 
         <div className="blogpage">

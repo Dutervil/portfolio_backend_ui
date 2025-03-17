@@ -1,10 +1,20 @@
 
 import { getFirestore, collection, addDoc, getDocs,getDoc, updateDoc, doc, deleteDoc } from 'firebase/firestore';
 import {db} from "@/lib/firebaseConfig";
+import Cors from 'cors';
+import { initMiddleware } from '@/lib/init-middleware';
+
+
+const cors = Cors({
+    methods: ['GET', 'POST', 'OPTIONS'], // Specify allowed methods
+    allowedHeaders: ['Content-Type', 'my-api-key'], // Allow your custom header 'my-api-key'
+    origin: 'http://localhost:3001',
+});
 
 // CRUD Operations
 export default async function handler(req, res) {
     const { method } = req;
+    await initMiddleware(cors)(req, res);
 
     // CREATE - Add a new blog post
     if (method === 'POST') {

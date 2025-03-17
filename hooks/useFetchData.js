@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios,{AxiosRequestConfig} from "axios";
 
 function useFetchData(apiEndpoint) {
     const [allData, setAllData] = useState([]);
@@ -9,9 +9,19 @@ function useFetchData(apiEndpoint) {
     useEffect(() => {
         // Only run fetch after the initial load (skip first render)
         const fetchData = async () => {
+
+
+
             try {
                 setLoading(true); // Ensure loading state is set to true when starting
-                const res = await axios.get(apiEndpoint);
+
+
+                const res = await axios.get(apiEndpoint,{
+                    headers: {
+                        'my-api-key': '12345',
+                        'Content-Type': 'application/json',
+                    },
+                });
 
                 // If API response is expected to be an array
                 if (Array.isArray(res.data)) {
